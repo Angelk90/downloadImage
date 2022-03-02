@@ -9,12 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Check out current commit
-          
+     
+      - name: Url
+        run: node ./action.js >> $URL
+      
       - uses: suisei-cn/actions-download-file@v1
         id: downloadfile
         name: Download the file
         with:
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Meet_Truffle%21.jpg/440px-Meet_Truffle%21.jpg"
+          url: $URL
           target: assets/
           
       - name: Commit files
@@ -23,6 +26,7 @@ jobs:
          git config --local user.name "github-actions[bot]"
          git add .
          git commit -m "Add changes" -a
+         
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
