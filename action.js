@@ -4,5 +4,5 @@ async function getData(){
 }
 
 getData().then((url) => {
-  return url;
+ console.log(url);
 });
