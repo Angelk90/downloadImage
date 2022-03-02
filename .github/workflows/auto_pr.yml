@@ -11,7 +11,7 @@ jobs:
         name: Check out current commit
      
       - name: Url
-        run: node ./action.js >> file.txt
+        run: node ./action.js >> $URL
       
       - uses: suisei-cn/actions-download-file@v1
         id: downloadfile
