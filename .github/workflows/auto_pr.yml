@@ -14,4 +14,4 @@ jobs:
         name: Download the file
         with:
           url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Meet_Truffle%21.jpg/440px-Meet_Truffle%21.jpg"
-          target: assets
+          target: assets/
