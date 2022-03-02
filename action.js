@@ -1,5 +1,5 @@
 async function getData(){
- const url = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Meet_Truffle%21.jpg/440px-Meet_Truffle%21.jpg";
+ const url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Tyrannosaurus_rex_Sue_at_FMNH.jpg/440px-Tyrannosaurus_rex_Sue_at_FMNH.jpg";
  return url;
 }
 
