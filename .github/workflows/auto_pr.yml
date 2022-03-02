@@ -12,8 +12,8 @@ jobs:
      
       - name: Url
         run: |
-             URL=$(node ./action.js) 
-             echo "URL=$URL" >> $GITHUB_ENV
+         URL=$(node ./action.js) 
+         echo "URL=$URL" >> $GITHUB_ENV
       
       - uses: suisei-cn/actions-download-file@v1
         id: downloadfile
