@@ -11,7 +11,8 @@ jobs:
         name: Check out current commit
      
       - name: Url
-        run: URL=$(node ./action.js) 
+        run: |
+             URL=$(node ./action.js) 
              echo "URL=$URL" >> $GITHUB_ENV
       
       - uses: suisei-cn/actions-download-file@v1
