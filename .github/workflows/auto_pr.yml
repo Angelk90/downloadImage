@@ -11,13 +11,14 @@ jobs:
         name: Check out current commit
      
       - name: Url
-        run: node ./action.js >> $URL
+        run: URL=$(node ./action.js) 
+             echo "URL=$URL" >> $GITHUB_ENV
       
       - uses: suisei-cn/actions-download-file@v1
         id: downloadfile
         name: Download the file
         with:
-          url: $URL
+          url: ${{ env.URL }}
           target: assets/
           
       - name: Commit files
