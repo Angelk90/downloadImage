@@ -14,6 +14,7 @@ jobs:
         run: |
          URL=$(node ./actionMultifile.js)
          echo $URL
+         echo "URL=$URL" >> $GITHUB_ENV
         
       - name: use env var directly
         run: echo "$URL"
@@ -22,7 +23,7 @@ jobs:
         id: downloadfile
         name: Download the file
         with:
-          url: $URL
+          url: "$URL"
           target: assets/
       - run: ls -l 'assets/'
           
