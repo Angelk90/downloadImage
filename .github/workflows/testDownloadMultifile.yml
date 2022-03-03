@@ -20,7 +20,7 @@ jobs:
         id: downloadfile
         name: Download the file
         with:
-          url: ${{ env.URL }}
+          url: echo "${{ env.URL }}"
           target: assets/
       - run: ls -l 'assets/'
           
