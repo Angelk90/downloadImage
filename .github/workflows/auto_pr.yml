@@ -22,6 +22,7 @@ jobs:
         with:
           url: ${{ env.URL }}
           target: assets/
+      - run: ls -l 'assets/'
           
       - name: Commit files
         run: |
