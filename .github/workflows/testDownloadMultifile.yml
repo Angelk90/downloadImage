@@ -13,7 +13,7 @@ jobs:
       - name: Set env
         run: |
           echo 'URL<<EOF' >> $GITHUB_ENV
-          node scripts/actionMultifile.js >> $GITHUB_ENV
+          node ./actionMultifile.js >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
         
       - name: use env var directly
