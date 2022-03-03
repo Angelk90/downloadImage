@@ -12,9 +12,9 @@ jobs:
          
       - name: Set env
         run: |
-          echo 'URL<<EOF' >> $GITHUB_ENV
-          node ./actionMultifile.js >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
+         URL=$(node ./actionMultifile.js)
+         echo $URL
+         echo "URL=$URL" >> $GITHUB_ENV
           
       - name: use env var
         run: echo "${{ env.URL }}"
@@ -26,7 +26,7 @@ jobs:
         id: downloadfile
         name: Download the file
         with:
-          url: echo "${{ env.URL }}"
+          url: ${{ env.URL }}
           target: assets/
       - run: ls -l 'assets/'
           
