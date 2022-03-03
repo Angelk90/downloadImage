@@ -15,6 +15,12 @@ jobs:
           echo 'URL<<EOF' >> $GITHUB_ENV
           node ./actionMultifile.js >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
+          
+      - name: use env var
+        run: echo "${{ env.URL }}"
+        
+      - name: use env var directly
+        run: echo "$URL"
       
       - uses: Angelk90/actions-download-file@v1
         id: downloadfile
