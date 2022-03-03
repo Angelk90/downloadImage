@@ -1,7 +1,7 @@
 on: 
   workflow_dispatch:
   
-name: Test Download Multifile
+name: Download
 jobs:
   build:
     name: Build
@@ -12,11 +12,11 @@ jobs:
      
       - name: Url
         run: |
-         URL=$(node ./actionMultifile.js)
+         URL=$(node ./action.js)
          echo $URL
          echo "URL=$URL" >> $GITHUB_ENV
       
-      - uses: Angelk90/actions-download-file@v1
+      - uses: suisei-cn/actions-download-file@v1
         id: downloadfile
         name: Download the file
         with:
