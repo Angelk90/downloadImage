@@ -22,7 +22,7 @@ jobs:
         id: downloadfile
         name: Download the file
         with:
-          url: echo "$URL"
+          url: "$URL"
           target: assets/
       - run: ls -l 'assets/'
           
