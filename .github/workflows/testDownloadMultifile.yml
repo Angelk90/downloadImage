@@ -9,12 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Check out current commit
-     
-      - name: Url
+         
+      - name: Set env
         run: |
-         URL=$(node ./actionMultifile.js)
-         echo $URL
-         echo "URL=$URL" >> $GITHUB_ENV
+          echo 'URL<<EOF' >> $GITHUB_ENV
+          node ./actionMultifile.js >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       
       - uses: Angelk90/actions-download-file@v1
         id: downloadfile
