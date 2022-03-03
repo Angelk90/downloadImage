@@ -19,7 +19,7 @@ jobs:
       - name: use env var directly
         run: echo "$URL"
       
-      - uses: Angelk90/actions-download-file@v4
+      - uses: Angelk90/actions-download-file@v5
         id: downloadfile
         name: Download the file
         with:
