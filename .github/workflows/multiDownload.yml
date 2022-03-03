@@ -16,10 +16,9 @@ jobs:
          echo $URL
          echo "URL=$URL" >> $GITHUB_ENV
       
-      - uses: suisei-cn/actions-download-file@v1
-        id: downloadfile
-        name: Download the file
-      - run: wget -i filesToDownload.txt
+      -  id: downloadfile
+         name: Download the file
+         run: wget -i filesToDownload.txt
       - run: ls -l 'assets/'
           
       - name: Commit
