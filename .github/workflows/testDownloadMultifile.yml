@@ -25,6 +25,7 @@ jobs:
         with:
           url: ${{ env.URL }}
           target: assets/
+          filename: '["a.jpg", "b.jpg"]'
       - run: ls -l 'assets/'
           
       - name: Commit
