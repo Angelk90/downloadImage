@@ -37,6 +37,9 @@ jobs:
           npx prettier -w assets/
           git diff --quiet assets/ || echo "::set-output name=new_file_exist::true"
           
+      - name: Echo
+        run: echo {{steps.verify_diff.outputs}}
+          
       - name: Commit
         if: steps.verify_diff.outputs.new_file_exist == 'true'
         run: |
