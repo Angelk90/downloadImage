@@ -28,13 +28,14 @@ jobs:
           filename: '["a.jpg", "b.jpg"]'
       - run: ls -l 'assets/'
       
-      - name: Check if there is any new translations
+      - name: Check if
         id: verify_diff
         run: |
-          git diff --quiet assets/ || echo "::set-output name=new_translations_exist::true"
+          npx prettier -w assets
+          git diff --quiet assets/ || echo "::set-output name=new_file_exist::true"
           
       - name: Commit
-        if: steps.verify_diff.outputs.new_translations_exist == 'true'
+        if: steps.verify_diff.outputs.new_file_exist == 'true'
         run: |
          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
          git config --local user.name "github-actions[bot]"
