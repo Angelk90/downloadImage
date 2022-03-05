@@ -28,6 +28,9 @@ jobs:
           filename: '["a.jpg", "b.jpg"]'
       - run: ls -l 'assets/'
       
+      - name: Install
+        run: npm install prettier
+      
       - name: Check if there is any new translations
         id: verify_diff
         run: |
