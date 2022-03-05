@@ -34,17 +34,17 @@ jobs:
           git diff assets/ || echo "::set-output name=new_file_exist::true"
           
       - uses: technote-space/get-diff-action@v6
+        id: git-diff
         with:
-          PATTERNS: |
-            +(assets)
+          PATTERNS: +(assets)
         
       - name: Console
         run: echo "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{ toJson(env.GIT_DIFF) }}
+          GITHUB_CONTEXT: ${{ toJson(steps.git-diff.outputs.diff) }}
           
       - name: Commit
-        if: env.GIT_DIFF
+        if: steps.git-diff.outputs.diff
         run: |
          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
          git config --local user.name "github-actions[bot]"
