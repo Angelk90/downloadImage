@@ -37,6 +37,7 @@ jobs:
         id: git-diff
         with:
           PATTERNS: +(assets)
+      - run: echo '${{ env.GIT_DIFF }}' | jq .
         
       - name: Console
         run: echo "$GITHUB_CONTEXT"
