@@ -34,7 +34,7 @@ jobs:
       - name: Check if
         id: verify_diff
         run: |
-          npx prettier -w assets
+          npx prettier -w assets/
           git diff --quiet assets/ || echo "::set-output name=new_file_exist::true"
           
       - name: Commit
