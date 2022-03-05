@@ -39,7 +39,7 @@ jobs:
       - name: Console
         run: echo "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{ toJson(steps.verify_diff.outputs) }}
+          GITHUB_CONTEXT: ${{ toJson(steps.verify_diff.outputs.new_file_exist) }}
           
       - name: Commit
         if: steps.verify_diff.outputs.new_file_exist == 'true'
