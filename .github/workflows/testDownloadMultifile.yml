@@ -35,9 +35,11 @@ jobs:
         id: verify_diff
         run: |
           git diff --quiet assets/ || echo "::set-output name=new_file_exist::true"
-          
-      - name: Echo
-        run: echo ${{steps.verify_diff.outputs}}
+        
+      - name: Console
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(steps.verify_diff.outputs) }}
           
       - name: Commit
         if: steps.verify_diff.outputs.new_file_exist == 'true'
