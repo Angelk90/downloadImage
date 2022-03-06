@@ -28,6 +28,7 @@ jobs:
           url: ${{ env.URL }}
           target: assets/
           filename: '["a.jpg", "b.jpg"]'
+          
       - run: ls -l 'assets/'
       
       - name: Check if
@@ -39,6 +40,7 @@ jobs:
         id: git-diff
         with:
           PATTERNS: +(assets)
+          
       - run: echo '${{ env.GIT_DIFF }}' | jq .
         
       - name: Console
