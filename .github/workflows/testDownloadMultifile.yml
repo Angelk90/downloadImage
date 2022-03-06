@@ -18,6 +18,8 @@ jobs:
         
       - name: use env var directly
         run: echo "$URL"
+        
+      - run: ls -l 'assets/'
       
       - uses: Angelk90/actions-download-file@master
         id: downloadfile
